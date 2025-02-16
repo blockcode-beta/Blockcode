@@ -22,10 +22,9 @@
             color: white;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
             padding-bottom: 8rem;
-            
+            position: relative;
             overflow: hidden;
         }
-        
 
         .hero-gradient::after {
             content: '';
@@ -87,8 +86,8 @@
             font-size: 1.1rem;
             border-radius: 50px;
             position: relative;
-            
-            transition: all 0.2s ease;
+            overflow: hidden;
+            transition: all 0.4s ease;
         }
 
         .glow-button::after {
@@ -114,6 +113,15 @@
         .title {
             font-weight: 700;
             letter-spacing: -0.025em;
+        }
+
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #667eea !important;
         }
     </style>
 </head>
@@ -189,9 +197,22 @@
     <footer class="footer has-background-dark has-text-light">
         <div class="content has-text-centered">
             <div class="mb-4">
-                <a href="https://github.com/blockcode-beta" class="has-text-light mx-3"><i class="fab fa-github fa-lg"></i></a>
-                <a href="#" class="has-text-light mx-3"><i class="fas fa-book fa-lg"></i></a>
-                <a href="#" class="has-text-light mx-3"><i class="fas fa-envelope fa-lg"></i></a>
+                <a href="https://github.com/blockcode-beta" 
+                   class="has-text-light mx-3 social-icon"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="https://x.com/blockcode_beta" 
+                   class="has-text-light mx-3 social-icon"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   <i class="fab fa-x-twitter fa-lg"></i>
+                </a>
+                <a href="mailto:support@blockcode.com" 
+                   class="has-text-light mx-3 social-icon">
+                   <i class="fas fa-envelope fa-lg"></i>
+                </a>
             </div>
             <p class="is-size-7 has-text-grey-light">
                 © 2023 Blockcode Systems • v0.9.1-beta.231015
