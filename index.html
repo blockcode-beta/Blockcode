@@ -17,7 +17,6 @@
             line-height: 1.7;
         }
 
-
         .hero-gradient {
             background: var(--gradient);
             color: white;
@@ -26,6 +25,7 @@
            
             overflow: hidden;
         }
+
         .hero-gradient::after {
             content: '';
             position: absolute;
@@ -122,6 +122,53 @@
             transform: translateY(-3px);
             color: #667eea !important;
         }
+        .typewriter-font {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            letter-spacing: -0.5px;
+            background: rgba(0,0,0,0.05);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            word-break: break-all;
+        }
+
+        .wallet-section {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(0,0,0,0.02);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .wallet-section:hover {
+            background: rgba(0,0,0,0.03);
+            transform: translateX(5px);
+        }
+
+        .wallet-address {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .wallet-address:hover {
+            opacity: 0.8;
+        }
+
+        .wallet-address::after {
+            content: "Кликните чтобы скопировать";
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+            font-size: 0.75rem;
+            color: #666;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .wallet-address:hover::after {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -193,6 +240,51 @@
         </div>
     </section>
 
+    <!-- Добавить перед футером -->
+    <section class="section has-background-white-bis">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-two-thirds">
+                <article class="message is-info">
+                    <div class="message-header">
+                        <p><i class="fas fa-hand-holding-heart mr-2"></i>Support the project</p>
+                    </div>
+                    <div class="message-body has-text-centered">
+                        <p class="mb-5">
+                            Thanks for using Blockcode!<br>
+                        </p>
+
+                        <div class="wallet-section">
+                            <h3 class="title is-6 mb-2">Bitcoin (BTC)</h3>
+                            <div class="wallet-address">
+                                <code class="typewriter-font">bc1qwlken6fnth5mrm6yw05tul36sslt4yad4kpa0z</code>
+                            </div>
+                        </div>
+
+                        <div class="wallet-section">
+                            <h3 class="title is-6 mb-2">Ethereum (ETH)</h3>
+                            <div class="wallet-address">
+                                <code class="typewriter-font">0x89ecb7e00F561d6672Ff7754A0dde27570496d37</code>
+                            </div>
+                        </div>
+
+                        <div class="wallet-section">
+                            <h3 class="title is-6 mb-2">Solana (SOL)</h3>
+                            <div class="wallet-address">
+                                <code class="typewriter-font">2X551oEFRnB7LGnxYtwaoYKgsQzNktoZU9nSb7CEi5LE</code>
+                            </div>
+                        </div>
+
+                        <p class="mt-5 has-text-grey is-size-7">
+                            
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    </section>
+
     <footer class="footer has-background-dark has-text-light">
     <div class="content has-text-centered">
         <div class="mb-4">
@@ -208,7 +300,7 @@
                rel="noopener noreferrer">
                <i class="fa-brands fa-twitter"></i>
             </a>
-            <a href="https://t.me/@usovz" 
+            <a href="https://t.me/usovz" 
                class="has-text-light mx-3 social-icon"
                target="_blank"
                rel="noopener noreferrer">
