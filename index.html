@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockcode Secure Storage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-lg: 0 24px 48px -12px rgba(0,0,0,0.25);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+        }
+
+        .hero-gradient {
+            background: var(--gradient);
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            padding-bottom: 8rem;
+            
+            overflow: hidden;
+        }
+        
+
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #fff;
+            transform: skewY(-3deg);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 180deg, #667eea, #764ba2, #667eea);
+            animation: rotate 6s linear infinite;
+            opacity: 0.05;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .glow-button {
+            background: var(--gradient);
+            border: none;
+            padding: 1.25rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            position: relative;
+            
+            transition: all 0.2s ease;
+        }
+
+        .glow-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            transition: 0.4s ease;
+        }
+
+        .glow-button:hover::after {
+            left: 120%;
+        }
+
+        .section {
+            padding: 5rem 1.5rem;
+        }
+
+        .title {
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-gradient section">
+        <div class="container has-text-centered">
+            <div class="feature-icon">
+                <i class="fas fa-lock fa-2x has-text-white"></i>
+            </div>
+            <h1 class="title is-1 mb-4">Blockcode Vault</h1>
+            <p class="subtitle is-4 has-text-light">Military-Grade Encryption Storage</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-two-thirds">
+                    <div class="download-card">
+                        <div class="has-text-centered mb-5">
+                            <h2 class="title is-3 mb-4">Download</h2>
+                            <p class="subtitle is-6 has-text-grey">Windows x64 0.9.1 Beta</p>
+                        </div>
+
+                        <div class="has-text-centered">
+                            <a href="https://www.mediafire.com/file/z9mtc076xfs8zvs/Blockcode.zip/file" 
+                               class="glow-button has-text-white">
+                               <i class="fas fa-download mr-3"></i>
+                               Installer (64-bit)
+                            </a>
+                        </div>
+
+                        <div class="content mt-5 has-text-centered">
+                            <div class="tags is-centered">
+                                <span class="tag is-dark">SHA-256: a1b2c3...f4e5</span>
+                                <span class="tag is-info">Build 231015</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-three-quarters">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            <p><i class="fas fa-shield-alt mr-2"></i>Security Architecture</p>
+                        </div>
+                        <div class="message-body">
+                            <div class="content">
+                                <div class="columns">
+                                    <div class="column">
+                                        <h3 class="title is-5"><i class="fas fa-key mr-2"></i>Encryption</h3>
+                                        <p>AES-256-GCM with HKDF key derivation</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="title is-5"><i class="fas fa-database mr-2"></i>Storage</h3>
+                                        <p>Sharded erasure coding across nodes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer has-background-dark has-text-light">
+        <div class="content has-text-centered">
+            <div class="mb-4">
+                <a href="#" class="has-text-light mx-3"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="has-text-light mx-3"><i class="fas fa-book fa-lg"></i></a>
+                <a href="#" class="has-text-light mx-3"><i class="fas fa-envelope fa-lg"></i></a>
+            </div>
+            <p class="is-size-7 has-text-grey-light">
+                © 2023 Blockcode Systems • v0.9.1-beta.231015
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
